@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:10:55 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:05:23 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:11:43 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isprint(int c)
 {
 	if (c > 31 && c < 127)
-		return (c);
+		return (1);
 	else
 		return (0);
 }

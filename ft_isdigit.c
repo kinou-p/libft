@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:10:39 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:05:09 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:11:30 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isdigit(int c)
 {
 	if (c <= 9 && c >= 0)
-		return (c);
+		return (1);
 	else
 		return (0);
 }

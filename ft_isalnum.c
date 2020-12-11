@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:10:08 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:04:06 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:10:51 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isalnum(int c)
 {
 	if (c <= 9 && c >= 0)
-		return (c);
+		return (1);
 	else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (c);
+		return (1);
 	else
 		return (0);
 }

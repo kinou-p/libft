@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:10:17 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 15:44:14 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:11:03 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isalpha(int c)
 {
 	if ((c > 64 && c < 90) || (c > 96 && c < 122))
-		return (c);
+		return (1);
 	else
 		return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:12:14 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:07:14 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:20:38 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	if (!size || !dest || !src)
+		return (dest)
 	size_t i;
 
 	i = 0;
@@ -21,7 +23,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n)
 		{
-			((char*)dest)[n] = ((char*)src)[n];
+			((unsigned char*)dest)[n] = ((unsigned char*)src)[n];
 			n--;
 		}
 	}
@@ -29,7 +31,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (i < n)
 		{
-			((char*)dest)[i] = ((char*)src)[i];
+			((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
 			i++;
 		}
 	}

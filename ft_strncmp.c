@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:13:31 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:14:21 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:32:24 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		n--;
 		i++;
 	}
-	return (0);
+	return ((unsigned char)(s1[i] - s2[i]));
 }
