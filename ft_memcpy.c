@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:12:03 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 15:51:47 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 18:04:45 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	p = (unsigned char*)dest;
 	p2 = (unsigned char*)src;
-	while (n > 0)
+	while (n > 0 && p[i] && p2[i])
 	{
 		n--;
 		p[i] = p2[i];
+		i++;
 	}
 	return (dest);
 }
