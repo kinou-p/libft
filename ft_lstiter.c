@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 20:14:47 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 00:43:59 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 17:47:39 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
-		*f(lst->content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
