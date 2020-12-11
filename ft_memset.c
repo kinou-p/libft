@@ -6,16 +6,16 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:12:24 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:08:00 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 15:48:06 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int		i;
-	char	*p;
+	int				i;
+	unsigned char	*p;
 
 	i = 0;
 	p = (unsigned char*)s;

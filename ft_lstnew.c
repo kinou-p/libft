@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 00:12:03 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 15:51:47 by apommier         ###   ########.fr       */
+/*   Created: 2020/12/09 01:06:20 by apommier          #+#    #+#             */
+/*   Updated: 2020/12/09 01:31:00 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include ""libft.h""
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*p;
-	unsigned char	*p2;
-	int				i;
+	t_list *new;
 
-	i = 0;
-	p = (unsigned char*)dest;
-	p2 = (unsigned char*)src;
-	while (n > 0)
-	{
-		n--;
-		p[i] = p2[i];
-	}
-	return (dest);
+	new = (t_list)malloc(sizeof(t_list));
+	if (!new)
+		return (0);
+	new->content = content;
+	new->next = 0;
+	return (new);
 }

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 00:11:04 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 16:57:52 by apommier         ###   ########.fr       */
+/*   Created: 2020/12/09 03:24:50 by apommier          #+#    #+#             */
+/*   Updated: 2020/12/11 15:33:49 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	char	*p;
-	char	*p1;
+	int	i;
 
-	p = (char*)dest;
-	p1 = (char*)src;
-	while (n > 0 && *p1 != c)
+	i = 0;
+	while (lst)
 	{
-		*p = *p1;
-		p++;
-		p1++;
-		n--;
+		lst = lst->next;
+		i++;
 	}
-	if (*p1 == (char)c)
-	{
-		*p = *p1;
-		p++;
-	}
-	return ((void*)p);
+	return (i);
 }

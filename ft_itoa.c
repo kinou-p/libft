@@ -6,11 +6,11 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/08 19:00:08 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 15:32:12 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*fill(long n, int j, int minus)
 {
@@ -41,7 +41,6 @@ char	*ft_itoa(int n)
 	minus = 0;
 	i = 1;
 	j = 0;
-
 	if (n < 0)
 	{
 		minus = 1;

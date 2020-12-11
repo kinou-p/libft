@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 00:12:03 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 15:51:47 by apommier         ###   ########.fr       */
+/*   Created: 2020/12/09 01:31:45 by apommier          #+#    #+#             */
+/*   Updated: 2020/12/09 18:57:02 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	unsigned char	*p;
-	unsigned char	*p2;
-	int				i;
-
-	i = 0;
-	p = (unsigned char*)dest;
-	p2 = (unsigned char*)src;
-	while (n > 0)
-	{
-		n--;
-		p[i] = p2[i];
-	}
-	return (dest);
+	new->next = *alst;
+	*alst = new;
 }

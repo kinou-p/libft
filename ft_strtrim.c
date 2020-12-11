@@ -6,15 +6,15 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 23:52:05 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/02 19:29:33 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 16:21:55 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static int	is_set(char const *set, char c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (set[i])
@@ -25,7 +25,7 @@ static int	is_set(char const *set, char c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		j;
 	int		i;
@@ -44,9 +44,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (dest == 0)
 		return (0);
 	j = 0;
-	while (s[i] && len - j)
+	while (s1[i] && len - j)
 	{
-		dest[j] = s[i];
+		dest[j] = s1[i];
 		i++;
 		j++;
 	}

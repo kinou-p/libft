@@ -6,33 +6,11 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 00:54:12 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/07 00:54:20 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/11 16:27:08 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdlib.h>
-
-int		call(char *s, char c, char **dest, int j)
-{
-	int		i;
-
-	i = 0;
-	while (j > i)
-	{
-		if (fill_tab(*s, c, dest[i]))
-			j--;
-		else
-		{
-			while (i - 1)
-			{
-				free(dest[i - 1]);
-			}
-			free(dest);
-		}		
-		i++;
-	}
-}
+#include "libft.h"
 
 int		fill_tab(char *s, char c, char *dest)
 {
@@ -41,7 +19,7 @@ int		fill_tab(char *s, char c, char *dest)
 	i = 0;
 	while (s[i] != c || s[i])
 		i++;
-	dest = (char*)ft_calloc(i + 1, sizeof(char))
+	dest = (char*)ft_calloc(i + 1, sizeof(char));
 	if (dest == 0)
 		return (0);
 	i = 0;
@@ -52,6 +30,27 @@ int		fill_tab(char *s, char c, char *dest)
 	}
 	dest[i] = 0;
 	return (1);
+}
+
+void	call(char *s, char c, char **dest, int j)
+{
+	int		i;
+
+	i = 0;
+	while (j > i)
+	{
+		if (fill_tab(s, c, dest[i]))
+			j--;
+		else
+		{
+			while (i - 1)
+			{
+				free(dest[i - 1]);
+			}
+			free(dest);
+		}
+		i++;
+	}
 }
 
 char	**ft_split(char const *s, char c)
@@ -70,8 +69,9 @@ char	**ft_split(char const *s, char c)
 			j++;
 		i++;
 	}
-	dest = (char**)malloc(sizeof(char*) * j)
+	dest = (char**)malloc(sizeof(char*) * j);
 	if (dest == 0)
-		return (0)
-	call(*s, c, **dest, j);
+		return (0);
+	call((char*)s, c, dest, j);
+	return (dest);
 }
