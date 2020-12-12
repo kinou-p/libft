@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 23:52:05 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 16:21:55 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/12 10:09:53 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static int	is_set(char const *set, char c)
 	{
 		if (set[i] == c)
 			return (1);
+		i++;
 	}
 	return (0);
 }
@@ -41,7 +42,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 		j++;
 	len = len - i - j;
 	dest = malloc(sizeof(char) * (len + 1));
-	if (dest == 0)
+	if (dest == 0 || s1 == 0 || (size_t)i == ft_strlen(s1))
 		return (0);
 	j = 0;
 	while (s1[i] && len - j)

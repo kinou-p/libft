@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:11:39 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/11 16:04:15 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/12 13:53:45 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = (unsigned char*)s;
 	while (n)
 	{
-		if (c == *str)
+		if ((unsigned char)c == *str)
 			return (str);
 		n--;
 		str++;
