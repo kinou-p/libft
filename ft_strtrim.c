@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 23:52:05 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 18:57:57 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 20:56:20 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	len = len - i - j;
 	if (len < 0)
 		len = 0;
-	dest = calloc(len + 1, 1);
+	dest = ft_calloc(len + 1, 1);
 	if (dest == 0 || s1 == 0)
 		return (0);
 	j = 0;

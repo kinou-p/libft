@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 00:54:12 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 18:39:50 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 20:57:53 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])

@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 22:54:40 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 19:24:11 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 20:53:46 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	i = 0;
-	dest = malloc(1 * len);
+	dest = malloc(1 * len + 1);
 	if (dest == 0)
 		return (0);
 	if (start > ft_strlen(s) || len == 0)
