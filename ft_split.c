@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 00:54:12 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 20:57:53 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 22:04:54 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int		fill_tab(char *s, char c, char **dest, size_t index)
 		dest[index][i] = s[i];
 		i++;
 	}
-	dest[index][i] = 0;
 	return (1);
 }
 
