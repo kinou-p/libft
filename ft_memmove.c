@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:12:14 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 21:10:58 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 21:15:13 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t i;
 
 	i = 0;
-	if (!dest || !src || !n)
+	if (!dest && !src)
 		return (dest);
 	if (dest > src)
 	{
