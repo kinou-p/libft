@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:13:42 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/12 18:13:44 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 20:12:37 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	int	j;
 
 	i = 0;
-	if (!len)
-		return (0);
+	if (!len || !little[i])
+		return (big);
 	if (!little[i])
 		return ((char*)big);
 	while (big[i] && len - i - 1)
