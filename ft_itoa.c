@@ -6,13 +6,13 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/12 21:58:21 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 23:06:45 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*fill(long n, int j, int minus)
+static char	*fill(long n, int j, int minus)
 {
 	char *dest;
 
@@ -34,7 +34,7 @@ char	*fill(long n, int j, int minus)
 	return (dest);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa(int n)
 {
 	long	i;
 	long	k;
