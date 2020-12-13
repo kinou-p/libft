@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 00:54:12 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 22:12:26 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 22:35:54 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (0);
+	while (s[i] == c && s[i])
+		i++;
 	while (s[i])
 	{
 		while (s[i] != c && s[i])
@@ -69,7 +71,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c && s[i])
 			i++;
 	}
-	if (!(dest = (char**)malloc(sizeof(char*) * j))))
+	if (!(dest = (char**)malloc(sizeof(char*) * (i + j))))
 		return (0);
 	dest[j] = 0;
 	call((char*)s, c, dest, j);
