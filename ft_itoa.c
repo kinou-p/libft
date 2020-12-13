@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/12 20:54:29 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/12 21:58:21 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*fill(long n, int j, int minus)
 	char *dest;
 
 	j += minus;
-	dest = (char*)ft_malloc(sizeof(char) * (j + 1));
+	dest = (char*)malloc(sizeof(char) * (j + 1));
 	if (dest == 0)
 		return (0);
 	dest[j] = 0;
@@ -55,5 +55,7 @@ char	*ft_itoa(int n)
 		i = i * 10;
 		j++;
 	}
+	if (k == 9)
+		j = 1;
 	return (fill(k, j, minus));
 }

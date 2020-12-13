@@ -6,55 +6,49 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 00:54:12 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/12 11:44:32 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/13 18:39:50 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		fill_tab(char *s, char c, char *dest)
+static int		fill_tab(char *s, char c, char **dest, size_t index)
 {
 	int		i;
 
+	i = 0;
 	while (s[i] != c && s[i])
 		i++;
-	dest = (char*)malloc(sizeof(char) * i + 1);
-	if (dest == 0)
+	dest[index] = (char*)ft_calloc(i + 1, sizeof(char));
+	if (dest[index] == 0)
 		return (0);
 	i = 0;
 	while (s[i] != c && s[i])
 	{
-		dest[i] = s[i];
+		dest[index][i] = s[i];
 		i++;
 	}
+	dest[index][i] = 0;
 	return (1);
 }
 
-void	call(char *s, char c, char **dest, int j)
+static void		call(char *s, char c, char **dest, int j)
 {
-	int		i;
+	int		index;
 	int		k;
 
 	k = 0;
-	i = 0;
-	while (s[k] == c)
-		k++;
-	while (j > i)
+	index = 0;
+	while (j > index)
 	{
-		if (!fill_tab(&s[k], c, dest[i]))
-		{
-			while (i - 1)
-			{
-				free(dest[i - 1]);
-				i--;
-			}
-			free(dest);
-			return ;
-		}
-		while (s[k] != c)
+		while (s[k] == c && s[k])
 			k++;
-		k++;
-		i++;
+		if (!s[k])
+			return ;
+		fill_tab(s + k, c, dest, index);
+		index++;
+		while (s[k] != c && s[k])
+			k++;
 	}
 }
 
@@ -68,14 +62,11 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			if (j)
-				j++;
-			while (s[i] == c)
-				i++;
-		}
-		i++;
+		while (s[i] == c && s[i])
+			i++;
+		j++;
+		while (s[i] != c && s[i])
+			i++;
 	}
 	if (!(dest = (char**)malloc(sizeof(char*) * (j + 1))))
 		return (0);
