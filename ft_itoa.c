@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 23:06:45 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/14 10:00:58 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*fill(long n, int j, int minus)
 	return (dest);
 }
 
-static char	*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long	i;
 	long	k;
