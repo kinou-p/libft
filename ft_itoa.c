@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 23:06:45 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/16 16:14:02 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*fill(long n, int j, int minus)
 {
-	char *dest;
+	char	*dest;
 
 	j += minus;
 	dest = (char*)malloc(sizeof(char) * (j + 1));

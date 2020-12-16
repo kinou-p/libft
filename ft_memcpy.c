@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:12:03 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 21:14:36 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/16 16:14:24 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (dest);
 	p = (char*)dest;
 	p1 = (const char*)src;
-
 	i = 0;
 	while (i < n)
 	{
