@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 15:38:13 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 16:58:13 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:00:44 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (0);
-	if (!(dest = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)));
+	if (!(dest = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (0);
 	while (s1[i] && s1)
 	{

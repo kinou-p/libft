@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 23:52:05 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 17:07:15 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/16 18:03:19 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,46 @@ static int	is_set(char const *set, char c)
 	return (0);
 }
 
+static int	len_dest(const char *s1, char const *set)
+{
+	int		len;
+	int		j;
+	int		i;
+
+	i = 0;
+	j = 0;
+	len = ft_strlen(s1);
+	while (is_set(set, s1[i]))
+		i++;
+	while (is_set(set, s1[len - j - 1]))
+		j++;
+	len = len - j - i;
+	if (len < 0)
+		len = 0;
+	return (len);
+}
+
 char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		j;
 	int		i;
+	int		len;
 	char	*dest;
 
-	if (!s1)
-		return (0);
 	i = 0;
 	j = 0;
-	j = ft_strlen(s1);
-	while (is_set(set, s1[i]))
-		i++;
-	while (is_set(set, s1[j - 1]))
-		j--;
-	j -= i;
-	if (j < 0)
-		j = 0;
-	if (!(dest = ft_calloc(len + 1, 1)) || !s1)
+	if (!s1)
 		return (0);
-	j = 0;
+	len = len_dest(s1, set);
+	if (!(dest = ft_calloc(len + 1, 1)))
+		return (0);
+	while (is_set(set, s1[i]))
+			i++;
 	while (s1[i] && len - j && len > 0)
-		dest[j++] = s1[i++];
+	{
+		dest[j] = s1[i];
+		i++;
+		j++;
+	}
 	return (dest);
 }
