@@ -6,7 +6,7 @@
 /*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 16:18:00 by apommier         ###   ########.fr       */
+/*   Updated: 2020/12/20 11:52:40 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,17 @@ char		*ft_itoa(int n)
 
 	k = n;
 	minus = 0;
-	i = 1;
-	j = 0;
+	j = 1;
 	if (k < 0)
 	{
 		minus = 1;
 		k = k * -1;
 	}
-	while (k >= i - 1)
+	i = k;
+	while (k >= 10)
 	{
-		i = i * 10;
+		k /= 10;
 		j++;
 	}
-	if (k == 9)
-		j = 1;
-	return (fill(k, j, minus));
+	return (fill(i, j, minus));
 }
