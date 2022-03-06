@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 00:09:17 by apommier          #+#    #+#             */
-/*   Updated: 2022/01/18 06:50:22 by apommier         ###   ########.fr       */
+/*   Created: 2020/12/14 06:05:54 by apommier          #+#    #+#             */
+/*   Updated: 2022/01/20 21:58:39 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char *nptr)
+char	*ft_strjoin(char *save, char *s2)
 {
+	char	*dest;
 	int		i;
-	long	nbr;
-	long	minus;
+	int		j;
 
-	minus = 1;
-	nbr = 0;
 	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
+	j = 0;
+	if (!save && !s2)
+		return (0);
+	dest = malloc(ft_strlen(save) + ft_strlen(s2) + 1);
+	while (save && save[i])
 	{
-		i++;
-		minus = -1;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nbr = nbr * 10 + nptr[i] - '0';
+		dest[j] = save[i];
+		j++;
 		i++;
 	}
-	return (minus * nbr);
+	i = 0;
+	while (s2 && s2[i])
+	{
+		dest[j] = s2[i];
+		j++;
+		i++;
+	}
+	dest[j] = 0;
+	return (dest);
 }

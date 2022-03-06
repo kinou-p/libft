@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 23:52:05 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 18:06:01 by apommier         ###   ########.fr       */
+/*   Updated: 2022/01/17 11:40:17 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	len_dest(const char *s1, char const *set)
 	return (len);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		j;
 	int		i;
@@ -57,7 +57,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	if (!s1)
 		return (0);
 	len = len_dest(s1, set);
-	if (!(dest = ft_calloc(len + 1, 1)))
+	dest = ft_calloc(len + 1, 1);
+	if (!dest)
 		return (0);
 	while (is_set(set, s1[i]))
 		i++;

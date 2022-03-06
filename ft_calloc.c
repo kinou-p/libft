@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:09:57 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 16:13:27 by apommier         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:18:04 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 			i++;
 		}
 	}
-	return ((void*)new);
+	return ((void *)new);
 }

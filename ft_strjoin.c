@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
+/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/11 15:38:13 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 17:00:44 by apommier         ###   ########.fr       */
+/*   Created: 2022/01/20 21:44:01 by apommier          #+#    #+#             */
+/*   Updated: 2022/01/21 08:07:04 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *save, char *s2)
 {
 	char	*dest;
 	int		i;
@@ -20,18 +20,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (!s1 || !s2)
+	if (!save && !s2)
 		return (0);
-	if (!(dest = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
-		return (0);
-	while (s1[i] && s1)
+	dest = malloc(ft_strlen(save) + ft_strlen(s2) + 1);
+	while (save && save[i])
 	{
-		dest[j] = s1[i];
+		dest[j] = save[i];
 		j++;
 		i++;
 	}
 	i = 0;
-	while (s2[i] && s2)
+	while (s2 && s2[i])
 	{
 		dest[j] = s2[i];
 		j++;

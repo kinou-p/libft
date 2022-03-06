@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstbeforelast.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/29 00:09:17 by apommier          #+#    #+#             */
-/*   Updated: 2022/01/18 06:50:22 by apommier         ###   ########.fr       */
+/*   Created: 2021/12/09 19:16:55 by apommier          #+#    #+#             */
+/*   Updated: 2022/01/17 11:28:22 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char *nptr)
+t_list	*ft_lstbeforelast(t_list *lst)
 {
-	int		i;
-	long	nbr;
-	long	minus;
+	t_list	*save;
 
-	minus = 1;
-	nbr = 0;
-	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
+	save = 0;
+	if (!lst)
+		return (0);
+	while (lst->next)
 	{
-		i++;
-		minus = -1;
+		save = lst;
+		lst = lst->next;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nbr = nbr * 10 + nptr[i] - '0';
-		i++;
-	}
-	return (minus * nbr);
+	return (save);
 }

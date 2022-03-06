@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
+/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 18:20:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/20 11:52:40 by apommier         ###   ########.fr       */
+/*   Updated: 2022/01/17 11:28:01 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*fill(long n, int j, int minus)
 	char	*dest;
 
 	j += minus;
-	dest = (char*)malloc(sizeof(char) * (j + 1));
+	dest = (char *)malloc(sizeof(char) * (j + 1));
 	if (dest == 0)
 		return (0);
 	dest[j] = 0;
@@ -34,7 +34,7 @@ static char	*fill(long n, int j, int minus)
 	return (dest);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long	i;
 	long	k;

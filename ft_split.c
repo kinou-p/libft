@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <alexpomms@student.42.fr>         +#+  +:+       +#+        */
+/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 00:54:12 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/13 23:07:09 by apommier         ###   ########.fr       */
+/*   Updated: 2022/01/21 08:09:38 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		fill_tab(char *s, char c, char **dest, size_t index)
+static int	fill_tab(char *s, char c, char **dest, size_t index)
 {
 	int		i;
 
 	i = 0;
 	while (s[i] != c && s[i])
 		i++;
-	dest[index] = (char*)ft_calloc(i + 1, sizeof(char));
+	dest[index] = (char *)ft_calloc(i + 1, sizeof(char));
 	if (dest[index] == 0)
 		return (0);
 	i = 0;
@@ -31,7 +31,7 @@ static int		fill_tab(char *s, char c, char **dest, size_t index)
 	return (1);
 }
 
-static void		call(char *s, char c, char **dest, int j)
+static void	call(char *s, char c, char **dest, int j)
 {
 	int		index;
 	int		k;
@@ -51,7 +51,7 @@ static void		call(char *s, char c, char **dest, int j)
 	}
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -71,9 +71,10 @@ char			**ft_split(char const *s, char c)
 		while (s[i] == c && s[i])
 			i++;
 	}
-	if (!(dest = (char**)malloc(sizeof(char*) * (i + j))))
+	dest = (char **)ft_calloc(sizeof(char *), (i + j));
+	if (!dest)
 		return (0);
 	dest[j] = 0;
-	call((char*)s, c, dest, j);
+	call((char *)s, c, dest, j);
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:13:19 by apommier          #+#    #+#             */
-/*   Updated: 2020/11/29 17:12:23 by apommier         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:12:05 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i] != 0)
 		i++;
 	return (i);

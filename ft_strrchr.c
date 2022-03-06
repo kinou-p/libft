@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 00:13:52 by apommier          #+#    #+#             */
-/*   Updated: 2020/12/16 16:14:41 by apommier         ###   ########.fr       */
+/*   Updated: 2022/01/17 11:39:37 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*str;
 	char	*last;
 
-	str = (char*)s;
+	str = (char *)s;
 	if (c == 0)
 	{
 		while (*str)
