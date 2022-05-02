@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 03:21:27 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/14 00:27:42 by apommier         ###   ########.fr       */
+/*   Updated: 2022/05/02 18:17:12 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ typedef struct t_slist
 	struct t_slist	*next;
 }				t_list;
 
+int				double_size(char **tab);
+void			print_double_fd(char **tab, int fd);
+void			free_double(char **tab);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
